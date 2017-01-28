@@ -8,12 +8,59 @@
   <include path="s2jdbc.dicon"/>
   <component name="actionMessagesThrowsInterceptor" class="org.seasar.struts.interceptor.ActionMessagesThrowsInterceptor"/>
 
+<!--  section2 HelloWorld -->
 <component name ="messageTarget"
  class = "section2.s2container.helloworld.SeasarMessageTarget"
- instance="singleton" />
+ instance="singleton">
+<initMethod name="init" />
+<destroyMethod name="destroy" />
+</component>
 
 <component name ="messageProvider"
  class = "section2.s2container.helloworld.HelloMessageProvider"
- instance="singleton" />
+ instance="singleton">
+<property name = "messageTarget">messageTarget</property> <!--  明示的にDIのコンポーネントを指定することも可能 -->
+ </component>
+
+<!--  section2 injection -->
+<component class="section2.s2container.injection.CSVLoader">
+  <arg>"C:/constructInjection.csv"</arg>
+  <!--  
+  <property name="fileName">"C:/setterInjection.csv"</property>
+  -->
+  <initMethod name="addFileName">
+    <arg>"C:/test1.csv"</arg>
+  </initMethod>
+  <initMethod name="addFileName">
+    <arg>"C:/test2.csv"</arg>
+  </initMethod>
+</component>
+
+<!--  
+<component name = "externalBindingExample"
+ class="section2.s2container.injection.ExternalBindingExample"
+ instance="request"
+ externalBinding="true" />
+-->
+
+<!--  section2 ognl -->
+<component class="section2.s2container.ognl.DateFormatter">
+  <property name="format">
+    new java.text.SimpleDateFormat("yyyy/MM/dd")
+  </property>
+</component>
+
+<component class="section2.s2container.ognl.OGNLSample">
+  <property name="map">
+    #{1 : "hoge" , 2:"foo"}
+  </property>
+  <property name="list">
+    {"list","list2"}
+  </property>
+  <property name="stStr">
+    "INJECT"
+  </property>
+</component>
+
 
 </components>

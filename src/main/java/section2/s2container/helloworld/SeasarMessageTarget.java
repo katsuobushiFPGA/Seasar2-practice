@@ -7,4 +7,14 @@ public class SeasarMessageTarget implements IMessageTarget {
         return "Seasar2";
     }
 
+    @Override
+    public void init() {
+        System.out.println("Init");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("Destory");
+    }
+
 }

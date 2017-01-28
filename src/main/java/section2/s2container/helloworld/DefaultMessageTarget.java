@@ -7,4 +7,14 @@ public class DefaultMessageTarget implements IMessageTarget {
         return "World";
     }
 
+    @Override
+    public void init() {
+        System.out.println("Init");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("Destroy");
+    }
+
 }

@@ -1,7 +1,9 @@
-.settings/*
+!.gitignore
+
+.settings/
 .classpath
 .project
 .tomcatplugin
 *.class
-src/main/webapp/WEB-INF/classes/*
-work/*
+src/main/webapp/WEB-INF/classes/
+work/org/
