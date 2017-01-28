@@ -9,7 +9,7 @@
   <component name="actionMessagesThrowsInterceptor" class="org.seasar.struts.interceptor.ActionMessagesThrowsInterceptor"/>
 
 <component name ="messageTarget"
- class = "section2.s2container.helloworld.DefaultMessageTarget"
+ class = "section2.s2container.helloworld.SeasarMessageTarget"
  instance="singleton" />
 
 <component name ="messageProvider"

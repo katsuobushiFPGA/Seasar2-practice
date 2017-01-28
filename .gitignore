@@ -2,3 +2,6 @@
 .classpath
 .project
 .tomcatplugin
+*.class
+src/main/webapp/WEB-INF/classes/*
+work/*
