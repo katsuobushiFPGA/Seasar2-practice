@@ -62,5 +62,15 @@
   </property>
 </component>
 
+<!--  section2 aop -->
+<component name="loggingInterceptor" class = "section2.s2container.aop.LoggingInterceptor" />
+
+<component class="section2.s2container.aop.CalcService">
+        <aspect pointcut="hello">
+               loggingInterceptor
+        </aspect>
+</component>
+
+
 
 </components>

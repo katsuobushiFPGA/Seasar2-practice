@@ -16,11 +16,18 @@
 package org.seasar.action;
 
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 
 public class IndexAction {
-	
+
     @Execute(validator = false)
 	public String index() {
         return "index.jsp";
 	}
+
+    @Execute(validator = false)
+    public String disp() {
+    	ResponseUtil.write("test");
+    	return "index.jsp";
+    }
 }
