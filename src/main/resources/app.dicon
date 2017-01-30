@@ -6,6 +6,7 @@
   <include path="aop.dicon"/>
   <include path="j2ee.dicon"/>
   <include path="s2jdbc.dicon"/>
+  <include path="aop.dicon" />
   <component name="actionMessagesThrowsInterceptor" class="org.seasar.struts.interceptor.ActionMessagesThrowsInterceptor"/>
 
 <!--  section2 HelloWorld -->
@@ -77,5 +78,7 @@
         </aspect>
 </component>
 
+<component class="section2.s2container.aop.TraceAnnotation">
+</component>
 
 </components>

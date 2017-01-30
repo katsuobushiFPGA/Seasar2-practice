@@ -17,5 +17,11 @@ public class Main {
 		trc.print();
 		trc.test();
 		container2.destroy();
+		
+		S2Container container3 = S2ContainerFactory.create("app.dicon");
+		TraceAnnotation trc2 =(TraceAnnotation)container3.getComponent(TraceAnnotation.class);		
+		trc2.trace();
+		container3.destroy();
+		
 	}
 }
