@@ -71,6 +71,11 @@
         </aspect>
 </component>
 
+<component class="section2.s2container.aop.TraceTest">
+        <aspect>
+               aop.traceInterceptor
+        </aspect>
+</component>
 
 
 </components>
